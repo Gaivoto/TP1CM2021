@@ -6,13 +6,104 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/editPassword"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/loginBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editUsername"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/editPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="20dp"
+        android:text="Button"
+        android:textSize="@dimen/loginBtnTextSize"
+        app:layout_constraintBottom_toTopOf="@+id/notesBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/notesBtn"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="70dp"
+        android:text="Button"
+        android:textSize="@dimen/loginBtnTextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="moveToNotes"/>
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="164dp"
+        android:layout_height="170dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/editUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <TextView
+        android:id="@+id/textUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        android:textSize="@dimen/loginTextSize"
+        app:layout_constraintBottom_toTopOf="@+id/editUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/username" />
 
+    <TextView
+        android:id="@+id/textPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="TextView"
+        android:textSize="@dimen/loginTextSize"
+        app:layout_constraintBottom_toTopOf="@+id/editPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/password" />
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="TextView"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/logoImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/app_name" />
 </androidx.constraintlayout.widget.ConstraintLayout>
