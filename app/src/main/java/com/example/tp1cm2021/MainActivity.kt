@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun moveToNotes(view: View) {
-        Log.i("EEE","aaaa")
         val intent = Intent(this, NoteList::class.java)
         startActivity(intent)
     }
