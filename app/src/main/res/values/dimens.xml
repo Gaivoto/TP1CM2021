@@ -2,4 +2,8 @@
 <resources>
     <dimen name="loginTextSize">18dp</dimen>
     <dimen name="loginBtnTextSize">17dp</dimen>
+    <dimen name="btnHeight">55dp</dimen>
+    <dimen name="btnWidth">170dp</dimen>
+    <dimen name="titleSize">28dp</dimen>
+    <dimen name="wideBtnWidth">230dp</dimen>
 </resources>

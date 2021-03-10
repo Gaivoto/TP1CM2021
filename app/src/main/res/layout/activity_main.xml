@@ -34,10 +34,10 @@
 
     <Button
         android:id="@+id/loginBtn"
-        android:layout_width="220dp"
-        android:layout_height="55dp"
+        android:layout_width="@dimen/btnWidth"
+        android:layout_height="@dimen/btnHeight"
         android:layout_marginBottom="20dp"
-        android:text="Button"
+        android:text="@string/login"
         android:textSize="@dimen/loginBtnTextSize"
         app:layout_constraintBottom_toTopOf="@+id/notesBtn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,16 +46,16 @@
 
     <Button
         android:id="@+id/notesBtn"
-        android:layout_width="220dp"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="55dp"
         android:layout_marginBottom="70dp"
-        android:text="Button"
+        android:onClick="moveToNotes"
+        android:text="@string/seeNotes"
         android:textSize="@dimen/loginBtnTextSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="moveToNotes"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/logoImage"
@@ -100,7 +100,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="TextView"
-        android:textSize="24dp"
+        android:textSize="@dimen/titleSize"
         app:layout_constraintBottom_toTopOf="@+id/logoImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"

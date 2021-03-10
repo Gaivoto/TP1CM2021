@@ -14,10 +14,10 @@ class NoteViewModel(application: Application): AndroidViewModel(application) {
 
     private val repository: NoteRepository
 
-    val localNotes: LiveData<List<Note>>
+    var localNotes: LiveData<List<Note>>
 
     init {
-        val notesDao = NoteDB.getDatabase(application).noteDao()
+        val notesDao = NoteDB.getDatabase(application, viewModelScope).noteDao()
         repository = NoteRepository(notesDao)
         localNotes = repository.localNotes
     }

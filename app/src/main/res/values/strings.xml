@@ -2,4 +2,8 @@
     <string name="app_name">TP1CM2021</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="noteList">Note List</string>
+    <string name="createNote">Create a new note</string>
+    <string name="login">Login</string>
+    <string name="seeNotes">See Notes</string>
 </resources>

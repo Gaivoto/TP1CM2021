@@ -6,4 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".NoteList">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/noteListRecycler"
+        android:layout_width="366dp"
+        android:layout_height="500dp"
+        android:layout_marginBottom="110dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/createNoteBtn"
+        android:layout_width="@dimen/wideBtnWidth"
+        android:layout_height="@dimen/btnHeight"
+        android:layout_marginBottom="25dp"
+        android:text="@string/createNote"
+        android:textSize="@dimen/loginBtnTextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/noteListTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="@string/noteList"
+        android:textSize="@dimen/titleSize"
+        app:layout_constraintBottom_toTopOf="@+id/noteListRecycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
