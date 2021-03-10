@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TP1CM2021">
-        <activity android:name=".NoteList"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.NoteList"></activity>
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

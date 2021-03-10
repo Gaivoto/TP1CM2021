@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/createBtn"
+        android:layout_width="@dimen/smallBtnWidth"
+        android:layout_height="@dimen/btnHeight"
+        android:layout_marginBottom="20dp"
+        android:text="@string/create"
+        android:textSize="@dimen/loginBtnTextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cancelBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="@dimen/smallBtnWidth"
+        android:layout_height="@dimen/btnHeight"
+        android:layout_marginBottom="20dp"
+        android:text="@string/cancel"
+        android:textSize="@dimen/loginBtnTextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/createBtn"/>
+
+    <TextView
+        android:id="@+id/bigText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/createNote"
+        android:textSize="@dimen/dialogTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="@string/title"
+        android:textSize="@dimen/loginTextSize"
+        app:layout_constraintBottom_toTopOf="@+id/editTitle"
+        app:layout_constraintStart_toStartOf="@+id/editTitle" />
+
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="@string/description"
+        android:textSize="@dimen/loginTextSize"
+        app:layout_constraintBottom_toTopOf="@+id/editDescription"
+        app:layout_constraintStart_toStartOf="@+id/editDescription" />
+
+    <EditText
+        android:id="@+id/editTitle"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="110dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="@dimen/loginBtnTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editDescription"
+        android:layout_width="268dp"
+        android:layout_height="186dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="80dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:textSize="@dimen/loginBtnTextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

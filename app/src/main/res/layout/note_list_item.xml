@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/itemTitle"
     android:layout_width="366dp"
-    android:layout_height="90dp">
+    android:layout_height="90dp"
+    android:onClick="openNoteDetails">
 
     <TextView
         android:id="@+id/noteTitle"

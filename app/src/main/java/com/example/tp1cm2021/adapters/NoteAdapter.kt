@@ -32,11 +32,13 @@ class NoteAdapter constructor(context: Context) : RecyclerView.Adapter<NoteAdapt
         holder.noteDescription.text = current.description
     }
 
+    //change data set of the adapter
     fun setNotes(notes: List<Note>) {
         this.notes = notes
         notifyDataSetChanged()
     }
 
+    //get data set size
     override fun getItemCount(): Int {
         return notes.size
     }

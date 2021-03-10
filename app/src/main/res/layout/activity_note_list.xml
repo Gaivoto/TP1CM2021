@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NoteList">
+    tools:context=".activities.NoteList">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/noteListRecycler"
@@ -21,12 +21,13 @@
         android:layout_width="@dimen/wideBtnWidth"
         android:layout_height="@dimen/btnHeight"
         android:layout_marginBottom="25dp"
-        android:text="@string/createNote"
+        android:text="@string/createNewNote"
         android:textSize="@dimen/loginBtnTextSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="launchCreateDialog"/>
 
     <TextView
         android:id="@+id/noteListTitle"
