@@ -14,4 +14,6 @@
     <string name="description">Description</string>
     <string name="createNote">Create Note</string>
     <string name="editNote">Edit Note</string>
+    <string name="deleteNote">Delete Note</string>
+    <string name="sureDelete">Are you sure you want to delete the note </string>
 </resources>

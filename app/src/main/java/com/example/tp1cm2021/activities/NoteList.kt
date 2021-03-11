@@ -16,11 +16,12 @@ import com.example.tp1cm2021.R
 import com.example.tp1cm2021.adapters.NoteAdapter
 import com.example.tp1cm2021.entities.Note
 import com.example.tp1cm2021.fragments.CreateNoteFragment
+import com.example.tp1cm2021.fragments.DeleteNoteFragment
 import com.example.tp1cm2021.fragments.EditNoteFragment
 import com.example.tp1cm2021.fragments.NoteDetailsFragment
 import com.example.tp1cm2021.viewModel.NoteViewModel
 
-class NoteList : AppCompatActivity(), CreateNoteFragment.NoteCreateDialogListener, EditNoteFragment.NoteEditDialogListener {
+class NoteList : AppCompatActivity(), CreateNoteFragment.NoteCreateDialogListener, EditNoteFragment.NoteEditDialogListener, DeleteNoteFragment.NoteDeleteDialogListener {
 
     private lateinit var viewModel: NoteViewModel
 
@@ -89,20 +90,41 @@ class NoteList : AppCompatActivity(), CreateNoteFragment.NoteCreateDialogListene
         editNoteFragment.show(supportFragmentManager, "EditNoteFragment")
     }
 
-    //create note and dismiss note creation dialog
+    //edit note and dismiss note edition dialog
     override fun onEditNote(dialog: DialogFragment, note: Note) {
         viewModel.updateNote(note)
         dialog.dismiss()
     }
 
-    //dismiss note creation dialog
+    //dismiss note edition dialog
     override fun onCancelEdit(dialog: DialogFragment) {
         dialog.dismiss()
     }
 
     //open note deletion dialog
     fun launchDeleteDialog(view: View) {
+        val deleteNoteFragment = DeleteNoteFragment()
 
+        val args = Bundle()
+
+        val listItem = view.parent as ViewGroup
+
+        //add clicked note information to note dialog
+        args.putString("id", listItem.findViewById<TextView>(R.id.listItemId).text.toString())
+        args.putString("title", listItem.findViewById<TextView>(R.id.noteTitle).text.toString())
+
+        deleteNoteFragment.arguments = args
+        deleteNoteFragment.show(supportFragmentManager, "DeleteNoteFragment")
     }
 
+    //delete note and dismiss note deletion dialog
+    override fun onDeleteNote(dialog: DialogFragment, id: Int) {
+        viewModel.deleteNote(id)
+        dialog.dismiss()
+    }
+
+    //dismiss note deletion dialog
+    override fun onCancelDelete(dialog: DialogFragment) {
+        dialog.dismiss()
+    }
 }
