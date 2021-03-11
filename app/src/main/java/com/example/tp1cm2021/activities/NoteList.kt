@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -14,6 +15,7 @@ import com.example.tp1cm2021.R
 import com.example.tp1cm2021.adapters.NoteAdapter
 import com.example.tp1cm2021.entities.Note
 import com.example.tp1cm2021.fragments.CreateNoteFragment
+import com.example.tp1cm2021.fragments.NoteDetailsFragment
 import com.example.tp1cm2021.viewModel.NoteViewModel
 
 class NoteList : AppCompatActivity(), CreateNoteFragment.NoteCreateDialogListener {
@@ -45,16 +47,25 @@ class NoteList : AppCompatActivity(), CreateNoteFragment.NoteCreateDialogListene
 
     //open note details dialog
     fun openNoteDetails(view: View) {
+        val noteDetailsFragment = NoteDetailsFragment()
 
+        val args = Bundle()
+
+        //add clicked note information to note dialog
+        args.putString("title", view.findViewById<TextView>(R.id.noteTitle).text.toString())
+        args.putString("description", view.findViewById<TextView>(R.id.noteDescription).text.toString())
+
+        noteDetailsFragment.arguments = args
+        noteDetailsFragment.show(supportFragmentManager, "NoteDetailsFragment")
     }
 
-    //create note and dismiss dialog
+    //create note and dismiss note creation dialog
     override fun onCreateNote(dialog: DialogFragment, note: Note) {
         viewModel.insertNote(note)
         dialog.dismiss()
     }
 
-    //dismiss dialog
+    //dismiss note creation dialog
     override fun onCancelCreate(dialog: DialogFragment) {
         dialog.dismiss()
     }
