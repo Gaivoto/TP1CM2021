@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="username">Nome de utilizador</string>
+    <string name="password">Palavra-passe</string>
+    <string name="noteList">Lista de Notas</string>
+    <string name="createNewNote">Criar uma nova nota</string>
+    <string name="login">Entrar</string>
+    <string name="seeNotes">Ver Notas</string>
+    <string name="create">Criar</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Apagar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="title">Título</string>
+    <string name="description">Descrição</string>
+    <string name="createNote">Criar Nota</string>
+    <string name="editNote">Editar Nota</string>
+    <string name="deleteNote">Apagar Nota</string>
+    <string name="sureDelete">"Tem a certeza que quer apagar a nota "</string>
+</resources>

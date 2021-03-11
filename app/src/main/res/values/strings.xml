@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TP1CM2021</string>
+    <string name="app_name" translatable="false">CityHelper</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="noteList">Note List</string>
