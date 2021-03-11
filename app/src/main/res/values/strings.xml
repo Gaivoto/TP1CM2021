@@ -13,4 +13,5 @@
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="createNote">Create Note</string>
+    <string name="editNote">Edit Note</string>
 </resources>

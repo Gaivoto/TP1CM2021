@@ -32,7 +32,7 @@ class CreateNoteFragment : DialogFragment() {
             val createBtn = dialogView.findViewById<Button>(R.id.createBtn)
             val cancelBtn = dialogView.findViewById<Button>(R.id.cancelBtn)
 
-            //add listeners to the dialog's custom button and make them comunicate with the parent activity
+            //add listeners to the dialog's custom button and make them communicate with the parent activity
             createBtn.setOnClickListener {
 
                 val title: String = dialogView.findViewById<EditText>(R.id.editTitle).text.toString()
@@ -51,14 +51,14 @@ class CreateNoteFragment : DialogFragment() {
         } ?: throw IllegalStateException("Activity cannot be null")
     }
 
-    //apply listener to the dialog
+    //attach parent as listener
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
         try {
             listener = context as NoteCreateDialogListener
         } catch (e: ClassCastException) {
-            throw ClassCastException((context.toString() + " must implement NoticeDialogListener"))
+            throw ClassCastException((context.toString() + " must implement NoteCreateDialogListener"))
         }
     }
 }
