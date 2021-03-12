@@ -30,7 +30,7 @@ class NoteViewModel(application: Application): AndroidViewModel(application) {
 
     //call repository method to update note by id
     fun updateNote(note: Note) = viewModelScope.launch(Dispatchers.IO) {
-        repository.updateNote(note.title, note.description, note.id!!)
+        repository.updateNote(note.title, note.description, note.id!!, note.date)
     }
 
     //call repository method to delete note by id

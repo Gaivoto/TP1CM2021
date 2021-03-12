@@ -21,6 +21,7 @@ class NoteDetailsFragment() : DialogFragment() {
             //display clicked note information on the dialog
             dialogView.findViewById<TextView>(R.id.noteDetailsTitleText).text = arguments!!["title"].toString()
             dialogView.findViewById<TextView>(R.id.noteDetailsDescriptionText).text = arguments!!["description"].toString()
+            dialogView.findViewById<TextView>(R.id.noteDetailsDateText).text = getString(R.string.lastModified) + " " + arguments!!["date"].toString()
 
             builder.setView(dialogView)
 

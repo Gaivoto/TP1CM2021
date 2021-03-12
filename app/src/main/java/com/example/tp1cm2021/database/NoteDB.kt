@@ -11,7 +11,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import kotlin.jvm.Volatile;
 
-@Database(entities = arrayOf(Note::class), version = 4, exportSchema = false)
+@Database(entities = arrayOf(Note::class), version = 5, exportSchema = false)
 public abstract class NoteDB : RoomDatabase(){
 
     abstract fun noteDao(): NoteDao

@@ -19,6 +19,7 @@ class NoteAdapter constructor(context: Context) : RecyclerView.Adapter<NoteAdapt
         val noteId: TextView = itemView.findViewById(R.id.listItemId)
         val noteTitle: TextView = itemView.findViewById(R.id.noteTitle)
         val noteDescription: TextView = itemView.findViewById(R.id.noteDescription)
+        val noteDate: TextView = itemView.findViewById(R.id.noteDate)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
@@ -32,6 +33,7 @@ class NoteAdapter constructor(context: Context) : RecyclerView.Adapter<NoteAdapt
         holder.noteId.text = current.id.toString()
         holder.noteTitle.text = current.title
         holder.noteDescription.text = current.description
+        holder.noteDate.text = current.date
     }
 
     //change data set of the adapter

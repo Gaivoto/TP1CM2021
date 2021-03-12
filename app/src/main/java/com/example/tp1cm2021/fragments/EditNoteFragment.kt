@@ -3,14 +3,18 @@ package com.example.tp1cm2021.fragments
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.DialogFragment
 import com.example.tp1cm2021.R
 import com.example.tp1cm2021.entities.Note
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class EditNoteFragment : DialogFragment() {
 
@@ -22,6 +26,7 @@ class EditNoteFragment : DialogFragment() {
         fun onCancelEdit(dialog: DialogFragment)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             val builder = AlertDialog.Builder(it)
@@ -34,6 +39,7 @@ class EditNoteFragment : DialogFragment() {
             dialogView.findViewById<TextView>(R.id.idEdit).text = arguments!!["id"].toString()
             dialogView.findViewById<TextView>(R.id.editTitleEdit).text = arguments!!["title"].toString()
             dialogView.findViewById<TextView>(R.id.editDescriptionEdit).text = arguments!!["description"].toString()
+            dialogView.findViewById<TextView>(R.id.dateEdit).text = getString(R.string.lastModified) + " " + arguments!!["date"].toString()
 
             val editBtn = dialogView.findViewById<Button>(R.id.editBtn)
             val cancelBtn = dialogView.findViewById<Button>(R.id.cancelEditBtn)
@@ -44,8 +50,9 @@ class EditNoteFragment : DialogFragment() {
                 val id: Int = dialogView.findViewById<TextView>(R.id.idEdit).text.toString().toInt()
                 val title: String = dialogView.findViewById<EditText>(R.id.editTitleEdit).text.toString()
                 val description: String = dialogView.findViewById<EditText>(R.id.editDescriptionEdit).text.toString()
+                val date: String = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
 
-                listener.onEditNote(this, Note(id, title, description))
+                listener.onEditNote(this, Note(id, title, description, date))
             }
 
             cancelBtn.setOnClickListener {

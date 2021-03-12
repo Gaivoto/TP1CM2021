@@ -7,5 +7,6 @@
     <dimen name="smallBtnWidth">140dp</dimen>
     <dimen name="titleSize">28dp</dimen>
     <dimen name="dialogTitle">23dp</dimen>
-    <dimen name="wideBtnWidth">230dp</dimen>
+    <dimen name="wideBtnWidth">250dp</dimen>
+    <dimen name="dialogSubtitle">21dp</dimen>
 </resources>

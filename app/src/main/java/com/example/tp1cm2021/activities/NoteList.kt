@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -52,6 +53,7 @@ class NoteList : AppCompatActivity(), CreateNoteFragment.NoteCreateDialogListene
         //add clicked note information to note dialog
         args.putString("title", view.findViewById<TextView>(R.id.noteTitle).text.toString())
         args.putString("description", view.findViewById<TextView>(R.id.noteDescription).text.toString())
+        args.putString("date", view.findViewById<TextView>(R.id.noteDate).text.toString())
 
         noteDetailsFragment.arguments = args
         noteDetailsFragment.show(supportFragmentManager, "NoteDetailsFragment")
@@ -64,8 +66,12 @@ class NoteList : AppCompatActivity(), CreateNoteFragment.NoteCreateDialogListene
 
     //create note and dismiss note creation dialog
     override fun onCreateNote(dialog: DialogFragment, note: Note) {
-        viewModel.insertNote(note)
-        dialog.dismiss()
+        if(note.title == ""){
+            Toast.makeText(this, getString(R.string.noTitle), Toast.LENGTH_SHORT).show()
+        } else {
+            viewModel.insertNote(note)
+            dialog.dismiss()
+        }
     }
 
     //dismiss note creation dialog
@@ -85,6 +91,7 @@ class NoteList : AppCompatActivity(), CreateNoteFragment.NoteCreateDialogListene
         args.putString("id", listItem.findViewById<TextView>(R.id.listItemId).text.toString())
         args.putString("title", listItem.findViewById<TextView>(R.id.noteTitle).text.toString())
         args.putString("description", listItem.findViewById<TextView>(R.id.noteDescription).text.toString())
+        args.putString("date", listItem.findViewById<TextView>(R.id.noteDate).text.toString())
 
         editNoteFragment.arguments = args
         editNoteFragment.show(supportFragmentManager, "EditNoteFragment")
@@ -92,8 +99,12 @@ class NoteList : AppCompatActivity(), CreateNoteFragment.NoteCreateDialogListene
 
     //edit note and dismiss note edition dialog
     override fun onEditNote(dialog: DialogFragment, note: Note) {
-        viewModel.updateNote(note)
-        dialog.dismiss()
+        if(note.title == ""){
+            Toast.makeText(this, R.string.noTitle, Toast.LENGTH_SHORT).show()
+        } else {
+            viewModel.updateNote(note)
+            dialog.dismiss()
+        }
     }
 
     //dismiss note edition dialog

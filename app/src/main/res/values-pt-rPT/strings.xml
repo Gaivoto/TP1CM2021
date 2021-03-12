@@ -16,4 +16,6 @@
     <string name="editNote">Editar Nota</string>
     <string name="deleteNote">Apagar Nota</string>
     <string name="sureDelete">"Tem a certeza que quer apagar a nota "</string>
+    <string name="lastModified">Modificado em:</string>
+    <string name="noTitle">O título não pode estar vazio</string>
 </resources>

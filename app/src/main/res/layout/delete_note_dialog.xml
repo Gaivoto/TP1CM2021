@@ -3,14 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#EBEBFA">
 
     <TextView
         android:id="@+id/bigTextDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
+        android:fontFamily="sans-serif-medium"
         android:text="@string/deleteNote"
+        android:textColor="@color/black"
         android:textSize="@dimen/dialogTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -23,6 +26,8 @@
         android:layout_height="96dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="80dp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/black"
         android:textSize="@dimen/loginBtnTextSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,6 +41,7 @@
         android:layout_height="@dimen/btnHeight"
         android:layout_marginBottom="20dp"
         android:text="@string/delete"
+        app:backgroundTint="@color/material_on_background_emphasis_medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cancelBtnDelete"
         app:layout_constraintHorizontal_bias="0.5"
@@ -47,6 +53,7 @@
         android:layout_height="@dimen/btnHeight"
         android:layout_marginBottom="20dp"
         android:text="@string/cancel"
+        app:backgroundTint="@color/material_on_background_emphasis_medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

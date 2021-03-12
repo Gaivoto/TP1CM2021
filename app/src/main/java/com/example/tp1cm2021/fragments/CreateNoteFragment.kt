@@ -3,13 +3,19 @@ package com.example.tp1cm2021.fragments
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.DialogFragment
 import com.example.tp1cm2021.R
 import com.example.tp1cm2021.entities.Note
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class CreateNoteFragment : DialogFragment() {
 
@@ -21,6 +27,7 @@ class CreateNoteFragment : DialogFragment() {
         fun onCancelCreate(dialog: DialogFragment)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             val builder = AlertDialog.Builder(it)
@@ -37,8 +44,9 @@ class CreateNoteFragment : DialogFragment() {
 
                 val title: String = dialogView.findViewById<EditText>(R.id.editTitle).text.toString()
                 val description: String = dialogView.findViewById<EditText>(R.id.editDescription).text.toString()
+                val date: String = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
 
-                listener.onCreateNote(this, Note(null, title, description))
+                listener.onCreateNote(this, Note(null, title, description, date))
             }
 
             cancelBtn.setOnClickListener {

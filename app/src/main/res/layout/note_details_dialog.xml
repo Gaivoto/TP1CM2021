@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#EBEBFA">
 
     <TextView
         android:id="@+id/noteDetailsTitleText"
@@ -13,7 +13,9 @@
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-medium"
         android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="@dimen/dialogTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,8 +25,19 @@
         android:layout_width="328dp"
         android:layout_height="314dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
         android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="@dimen/loginBtnTextSize"
         app:layout_constraintStart_toStartOf="@+id/noteDetailsTitleText"
         app:layout_constraintTop_toBottomOf="@+id/noteDetailsTitleText" />
+
+    <TextView
+        android:id="@+id/noteDetailsDateText"
+        android:layout_width="320dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/noteDetailsDescriptionText"
+        app:layout_constraintTop_toBottomOf="@+id/noteDetailsDescriptionText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

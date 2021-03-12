@@ -15,12 +15,12 @@ class NoteRepository(private val noteDao: NoteDao) {
     }
 
     //call dao method to update note by id
-    suspend fun updateNote(title: String, description: String, id: Int){
-        noteDao.updateNote(title, description, id)
+    suspend fun updateNote(title: String, description: String, id: Int, date: String){
+        noteDao.updateNote(title, description, id, date)
     }
 
     //call dao method to delete note by id
     suspend fun deleteNote(id: Int){
-        noteDao.deleteNote( id)
+        noteDao.deleteNote(id)
     }
 }
