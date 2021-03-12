@@ -18,4 +18,5 @@
     <string name="sureDelete">Are you sure you want to delete the note </string>
     <string name="lastModified">Last modified:</string>
     <string name="noTitle">The title cannot be empty</string>
+    <string name="noDescription">The description cannot be empty</string>
 </resources>

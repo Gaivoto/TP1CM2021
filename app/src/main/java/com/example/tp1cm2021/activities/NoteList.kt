@@ -61,13 +61,15 @@ class NoteList : AppCompatActivity(), CreateNoteFragment.NoteCreateDialogListene
 
     //open note creation dialog
     fun launchCreateDialog(view: View) {
-        val createNoteFragment = CreateNoteFragment().show(supportFragmentManager, "CreateNoteFragment")
+        CreateNoteFragment().show(supportFragmentManager, "CreateNoteFragment")
     }
 
     //create note and dismiss note creation dialog
     override fun onCreateNote(dialog: DialogFragment, note: Note) {
         if(note.title == ""){
             Toast.makeText(this, getString(R.string.noTitle), Toast.LENGTH_SHORT).show()
+        } else if(note.description == "") {
+            Toast.makeText(this, getString(R.string.noDescription), Toast.LENGTH_SHORT).show()
         } else {
             viewModel.insertNote(note)
             dialog.dismiss()
@@ -100,7 +102,9 @@ class NoteList : AppCompatActivity(), CreateNoteFragment.NoteCreateDialogListene
     //edit note and dismiss note edition dialog
     override fun onEditNote(dialog: DialogFragment, note: Note) {
         if(note.title == ""){
-            Toast.makeText(this, R.string.noTitle, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.noTitle), Toast.LENGTH_SHORT).show()
+        } else if(note.description == "") {
+            Toast.makeText(this, getString(R.string.noDescription), Toast.LENGTH_SHORT).show()
         } else {
             viewModel.updateNote(note)
             dialog.dismiss()

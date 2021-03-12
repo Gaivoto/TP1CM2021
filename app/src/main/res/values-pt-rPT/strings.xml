@@ -18,4 +18,5 @@
     <string name="sureDelete">"Tem a certeza que quer apagar a nota "</string>
     <string name="lastModified">Modificado em:</string>
     <string name="noTitle">O título não pode estar vazio</string>
+    <string name="noDescription">A descrição não pode estar vazia</string>
 </resources>
