@@ -19,4 +19,5 @@
     <string name="lastModified">Modificado em:</string>
     <string name="noTitle">O título não pode estar vazio</string>
     <string name="noDescription">A descrição não pode estar vazia</string>
+    <string name="title_activity_report_map">Mapa</string>
 </resources>

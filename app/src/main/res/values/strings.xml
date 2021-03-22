@@ -19,4 +19,5 @@
     <string name="lastModified">Last modified:</string>
     <string name="noTitle">The title cannot be empty</string>
     <string name="noDescription">The description cannot be empty</string>
+    <string name="title_activity_report_map">Map</string>
 </resources>

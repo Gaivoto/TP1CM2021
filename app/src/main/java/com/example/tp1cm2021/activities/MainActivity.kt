@@ -20,4 +20,9 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, NoteList::class.java)
         startActivity(intent)
     }
+
+    fun login(view: View) {
+        val intent = Intent(this, ReportMap::class.java)
+        startActivity(intent)
+    }
 }
