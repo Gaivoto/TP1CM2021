@@ -11,14 +11,13 @@
         android:id="@+id/editPassword"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
         android:background="@drawable/border"
         android:ems="10"
         android:fontFamily="sans-serif-light"
         android:inputType="textPassword"
         android:textColor="@color/black"
         android:textSize="17dp"
-        app:layout_constraintBottom_toTopOf="@+id/loginBtn"
+        app:layout_constraintBottom_toTopOf="@+id/loggedCheck"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
@@ -57,7 +56,7 @@
         android:id="@+id/notesBtn"
         android:layout_width="@dimen/btnWidth"
         android:layout_height="55dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="60dp"
         android:onClick="moveToNotes"
         android:text="@string/seeNotes"
         android:textSize="@dimen/loginBtnTextSize"
@@ -118,4 +117,14 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <CheckBox
+        android:id="@+id/loggedCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/keepMeLogged"
+        app:layout_constraintBottom_toTopOf="@+id/loginBtn"
+        app:layout_constraintStart_toStartOf="@+id/editPassword" />
 </androidx.constraintlayout.widget.ConstraintLayout>

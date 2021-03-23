@@ -20,4 +20,11 @@
     <string name="noTitle">The title cannot be empty</string>
     <string name="noDescription">The description cannot be empty</string>
     <string name="title_activity_report_map">Map</string>
+    <string name="failedLogin">Invalid credentials</string>
+    <string name="noUsername">The username cannot be empty</string>
+    <string name="noPassword">The password cannot be empty</string>
+    <string name="keepMeLogged">Keep me logged in</string>
+    <string name="preferenceFile" translatable="false">prefFile</string>
+    <string name="usernameP" translatable="false">usernameP</string>
+    <string name="passwordP" translatable="false">passwordP</string>
 </resources>

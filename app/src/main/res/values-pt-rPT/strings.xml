@@ -20,4 +20,8 @@
     <string name="noTitle">O título não pode estar vazio</string>
     <string name="noDescription">A descrição não pode estar vazia</string>
     <string name="title_activity_report_map">Mapa</string>
+    <string name="failedLogin">Credenciais inválidas</string>
+    <string name="noUsername">O nome de utilizador não pode estar vazio</string>
+    <string name="noPassword">A palavra passe não pode estar vazia</string>
+    <string name="keepMeLogged">Manter-me logado</string>
 </resources>
