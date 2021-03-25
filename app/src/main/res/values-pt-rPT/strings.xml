@@ -26,4 +26,8 @@
     <string name="keepMeLogged">Manter-me logado</string>
     <string name="reportMap">Mapa de Situações</string>
     <string name="logout">Sair</string>
+    <string name="failedGetReports">Falha ao receber as situações reportadas</string>
+    <string name="typeDisplay">Tipo:</string>
+    <string name="createdIn">Criado em:</string>
+    <string name="failedGetImage">Falaha ao carregar a imagem</string>
 </resources>

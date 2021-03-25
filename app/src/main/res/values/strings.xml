@@ -29,4 +29,8 @@
     <string name="passwordP" translatable="false">passwordP</string>
     <string name="reportMap">Report Map</string>
     <string name="logout">Logout</string>
+    <string name="failedGetReports">Failed to get reports</string>
+    <string name="typeDisplay">Type:</string>
+    <string name="createdIn">Created in:</string>
+    <string name="failedGetImage">Failed to get the image</string>
 </resources>

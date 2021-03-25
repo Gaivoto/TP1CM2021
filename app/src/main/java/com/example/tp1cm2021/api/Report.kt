@@ -6,14 +6,15 @@ data class Report (
     val reportID: Int,
     val title: String,
     val description: String,
-    val lat: Int,
-    val lon: Int,
+    val lat: Float,
+    val lon: Float,
     val userID: Int,
     val tipo: String,
     val status: String,
     val lastModified: String,
     val lastModifiedDate: Date?,
-    val username: String
+    val username: String,
+    val image : String?
 )
 
 data class LoginOutput (

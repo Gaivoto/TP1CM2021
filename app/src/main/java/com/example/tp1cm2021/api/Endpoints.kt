@@ -1,15 +1,20 @@
 package com.example.tp1cm2021.api
 
+import okhttp3.Response
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.Callback
+import retrofit2.http.*
 
 interface Endpoints {
 
+    //get reports endpoint
     @GET("api/reports")
-    fun getReports(): Call<List<Report>>
+    fun getReports(
+            @Query("curLat") curLat: Float,
+            @Query("curLon") curLon: Float,
+            @Query("radius") radius: Int?,
+            @Query("tipo") tipo: String?
+    ): Call<List<Report>>
 
     //login endpoint
     @FormUrlEncoded
