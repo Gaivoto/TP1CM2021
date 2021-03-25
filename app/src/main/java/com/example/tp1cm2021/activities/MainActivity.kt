@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
                         } else {
                             val intent = Intent(this@MainActivity, ReportMap::class.java)
                             startActivity(intent)
+                            finish()
                         }
                     }
                 }
@@ -98,6 +99,7 @@ class MainActivity : AppCompatActivity() {
                             }
                             val intent = Intent(this@MainActivity, ReportMap::class.java)
                             startActivity(intent)
+                            finish()
                         }
                     }
                 }

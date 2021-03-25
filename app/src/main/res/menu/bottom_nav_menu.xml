@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/noteList"
+        android:title="@string/noteList"
+        android:icon="@drawable/note_list_bottom_nav" />
+    <item
+        android:id="@+id/reportMap"
+        android:title="@string/reportMap"
+        android:icon="@drawable/report_map_bottom_nav"/>
+    <item
+        android:id="@+id/logout"
+        android:title="@string/logout"
+        android:icon="@drawable/logout_bottom_nav"/>
+</menu>

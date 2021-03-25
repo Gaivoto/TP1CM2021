@@ -24,4 +24,6 @@
     <string name="noUsername">O nome de utilizador não pode estar vazio</string>
     <string name="noPassword">A palavra passe não pode estar vazia</string>
     <string name="keepMeLogged">Manter-me logado</string>
+    <string name="reportMap">Mapa de Situações</string>
+    <string name="logout">Sair</string>
 </resources>

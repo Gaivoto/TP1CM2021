@@ -10,8 +10,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/noteListRecycler"
         android:layout_width="613dp"
-        android:layout_height="200dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="170dp"
+        android:layout_marginBottom="5dp"
         android:background="#666666"
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/createNoteBtn"
@@ -23,7 +23,7 @@
         android:id="@+id/createNoteBtn"
         android:layout_width="@dimen/wideBtnWidth"
         android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="48dp"
         android:onClick="launchCreateDialog"
         android:text="@string/createNewNote"
         android:textSize="@dimen/loginBtnTextSize"
@@ -37,7 +37,7 @@
         android:id="@+id/noteListTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="5dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/noteList"
         android:textColor="@color/black"
@@ -46,4 +46,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        android:background="#FF222222"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

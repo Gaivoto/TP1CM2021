@@ -27,4 +27,6 @@
     <string name="preferenceFile" translatable="false">prefFile</string>
     <string name="usernameP" translatable="false">usernameP</string>
     <string name="passwordP" translatable="false">passwordP</string>
+    <string name="reportMap">Report Map</string>
+    <string name="logout">Logout</string>
 </resources>
