@@ -30,4 +30,9 @@
     <string name="typeDisplay">Tipo:</string>
     <string name="createdIn">Criado em:</string>
     <string name="failedGetImage">Falaha ao carregar a imagem</string>
+    <string name="distance">Distância:</string>
+    <string name="accident">Acidente</string>
+    <string name="obras">Obras</string>
+    <string name="other">Outro</string>
+    <string name="negativeDistance">O valor da distância não pode ser negativo</string>
 </resources>

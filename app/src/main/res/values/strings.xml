@@ -33,4 +33,15 @@
     <string name="typeDisplay">Type:</string>
     <string name="createdIn">Created in:</string>
     <string name="failedGetImage">Failed to get the image</string>
+    <string name="distance">Distance:</string>
+    <string-array name="typeFilter">
+        <item name="all">All</item>
+        <item name="accident">Accident</item>
+        <item name="obras">Construction</item>
+        <item name="other">Other</item>
+    </string-array>
+    <string name="accident">Accident</string>
+    <string name="obras">Construction</string>
+    <string name="other">Other</string>
+    <string name="negativeDistance">The distance value cannot be negative</string>
 </resources>

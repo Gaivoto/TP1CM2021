@@ -54,7 +54,7 @@ class CustomMapInfoWindow(context: Context) : GoogleMap.InfoWindowAdapter {
                 .error(R.drawable.placeholder)
                 .into(windowImage, object : Callback {
                     override fun onSuccess() {
-                        if (marker != null && marker.isInfoWindowShown) {
+                        if (marker.isInfoWindowShown) {
                             marker.hideInfoWindow()
                             marker.showInfoWindow()
                         }

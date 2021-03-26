@@ -23,14 +23,12 @@
         android:id="@+id/markerWindowDescription"
         android:layout_width="265dp"
         android:layout_height="48dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginTop="5dp"
         android:text="TextView"
         android:textColor="@color/black"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/markerWindowDate"
+        app:layout_constraintTop_toBottomOf="@+id/markerWindowDate" />
 
     <TextView
         android:id="@+id/markerWindowType1"
@@ -39,19 +37,23 @@
         android:layout_marginTop="2dp"
         android:text="@string/typeDisplay"
         android:textColor="@color/black"
-        android:textSize="13sp"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="@+id/markerWindowTitle"
         app:layout_constraintTop_toBottomOf="@+id/markerWindowTitle" />
 
     <ImageView
         android:id="@+id/markerWindowImage"
-        android:layout_width="221dp"
-        android:layout_height="129dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="196dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/markerWindowType1"
+        app:layout_constraintStart_toEndOf="@+id/markerWindowDescription"
+        app:layout_constraintTop_toTopOf="@+id/markerWindowTitle"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -62,7 +64,7 @@
         android:layout_marginLeft="5dp"
         android:text="TextView"
         android:textColor="@color/black"
-        android:textSize="13sp"
+        android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/markerWindowType1"
         app:layout_constraintTop_toTopOf="@+id/markerWindowType1" />
 
@@ -70,11 +72,10 @@
         android:id="@+id/markerWindowDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
+        android:layout_marginTop="5dp"
         android:text="TextView"
         android:textColor="@color/black"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toTopOf="@+id/markerWindowDescription"
-        app:layout_constraintStart_toStartOf="@+id/markerWindowDescription"
-        app:layout_constraintTop_toBottomOf="@+id/markerWindowImage" />
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/markerWindowType1"
+        app:layout_constraintTop_toBottomOf="@+id/markerWindowType1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

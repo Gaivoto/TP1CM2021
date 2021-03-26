@@ -4,12 +4,14 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.example.tp1cm2021.R
 import com.example.tp1cm2021.entities.Note
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DeleteNoteFragment : DialogFragment() {
 

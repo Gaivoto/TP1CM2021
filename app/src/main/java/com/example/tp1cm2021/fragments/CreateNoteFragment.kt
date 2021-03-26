@@ -13,6 +13,7 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.DialogFragment
 import com.example.tp1cm2021.R
 import com.example.tp1cm2021.entities.Note
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -38,6 +39,9 @@ class CreateNoteFragment : DialogFragment() {
 
             val createBtn = dialogView.findViewById<Button>(R.id.createBtn)
             val cancelBtn = dialogView.findViewById<Button>(R.id.cancelBtn)
+
+            //hide bottom navigation bar so it does not show up on the dialog
+            dialogView.findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.GONE
 
             //add listeners to the dialog's custom button and make them communicate with the parent activity
             createBtn.setOnClickListener {
