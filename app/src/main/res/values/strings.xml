@@ -40,8 +40,21 @@
         <item name="obras">Construction</item>
         <item name="other">Other</item>
     </string-array>
+    <string-array name="typeFilterCreate">
+        <item name="accident">Accident</item>
+        <item name="obras">Construction</item>
+        <item name="other">Other</item>
+    </string-array>
     <string name="accident">Accident</string>
-    <string name="obras">Construction</string>
+    <string name="construction">Construction</string>
     <string name="other">Other</string>
     <string name="negativeDistance">The distance value cannot be negative</string>
+    <string name="createReport">Create Report</string>
+    <string name="type">Type</string>
+    <string name="image">Image</string>
+    <string name="clearImage">Clear Image</string>
+    <string name="photoError">Could not take the photo</string>
+    <string name="noImage">No image was selected for this report</string>
+    <string name="errorCreatingReport">There was an error while creating the report</string>
+    <string name="successCreatingReport">Report was created successfully</string>
 </resources>

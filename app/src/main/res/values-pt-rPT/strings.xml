@@ -32,7 +32,15 @@
     <string name="failedGetImage">Falaha ao carregar a imagem</string>
     <string name="distance">Distância:</string>
     <string name="accident">Acidente</string>
-    <string name="obras">Obras</string>
     <string name="other">Outro</string>
     <string name="negativeDistance">O valor da distância não pode ser negativo</string>
+    <string name="createReport">Reportar Situação</string>
+    <string name="type">Tipo</string>
+    <string name="image">Imagem</string>
+    <string name="clearImage">Apagar Imagem</string>
+    <string name="photoError">Erro ao tirar a foto</string>
+    <string name="noImage">Nenhuma imagem foi escolhida para esta situação</string>
+    <string name="errorCreatingReport">Ocorreu um erro ao reportar a situação</string>
+    <string name="construction">Obras</string>
+    <string name="successCreatingReport">Situação reportada com sucesso</string>
 </resources>

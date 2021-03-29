@@ -50,6 +50,8 @@ dependencies {
     // Room components
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
 

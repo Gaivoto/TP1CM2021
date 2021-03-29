@@ -134,8 +134,6 @@ class ReportMap : AppCompatActivity(), OnMapReadyCallback {
             fusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
                 if(location != null) {
                     lastLocation = location
-                    val string : String = lastLocation.latitude.toString() + " - " + lastLocation.longitude.toString()
-                    Log.i("AAA", string)
                     //center map on the current location
                     mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(LatLng(lastLocation.latitude, lastLocation.longitude), 0f))
                 }
@@ -241,6 +239,17 @@ class ReportMap : AppCompatActivity(), OnMapReadyCallback {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    //called when clicking the fab - update current location and go to the report creation activity
+    fun goToReportCreation(view: View) {
+        getCurrentLocation()
+
+        val intent = Intent(this, CreateReport::class.java).apply {
+            putExtra("LAT", lastLocation.latitude)
+            putExtra("LON", lastLocation.longitude)
+        }
+        startActivity(intent)
     }
 
     //function to convert a drawable into a bitmap to be used in the map as an icon for a marker

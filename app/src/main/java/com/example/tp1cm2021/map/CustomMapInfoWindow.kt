@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.view.View
 import android.widget.ImageView
+import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import com.example.tp1cm2021.R
@@ -37,7 +38,11 @@ class CustomMapInfoWindow(context: Context) : GoogleMap.InfoWindowAdapter {
 
         windowTitle.text = marker.title
         windowDescription.text = description
-        windowType.text = tipo
+        windowType.text = when (tipo) {
+            "Acidente" -> mContext.getString(R.string.accident)
+            "Obras" -> mContext.getString(R.string.construction)
+            else -> mContext.getString(R.string.other)
+        }
 
         if(status == "Active") {
             windowDate.text = mContext.getString(R.string.createdIn) + " " + lastModified
@@ -50,8 +55,8 @@ class CustomMapInfoWindow(context: Context) : GoogleMap.InfoWindowAdapter {
 
         Picasso.get()
                 .load("http://cmtp1.000webhostapp.com/slimCMTP1/uploads/" + image + ".png")
-                .placeholder(R.drawable.placeholder)
-                .error(R.drawable.placeholder)
+                .placeholder(R.drawable.marker_info_placeholder)
+                .error(R.drawable.marker_info_placeholder)
                 .into(windowImage, object : Callback {
                     override fun onSuccess() {
                         if (marker.isInfoWindowShown) {

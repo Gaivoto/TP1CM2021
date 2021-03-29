@@ -9,4 +9,5 @@
     <dimen name="dialogTitle">23dp</dimen>
     <dimen name="wideBtnWidth">250dp</dimen>
     <dimen name="dialogSubtitle">21dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

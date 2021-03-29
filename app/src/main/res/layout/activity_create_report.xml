@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C8C8D7"
+    tools:context=".activities.CreateReport">
+
+    <TextView
+        android:id="@+id/createReportTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/createReport"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/createReportTitleText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/createReportTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/title"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/createReportTitleEdit"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/createReportDescriptionText"
+        android:layout_width="104dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/description"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/createReportDescriptionEdit"
+        app:layout_constraintStart_toStartOf="@+id/createReportTitleText" />
+
+    <TextView
+        android:id="@+id/createReportTypeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/type"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/createReportTypeSpinner"
+        app:layout_constraintStart_toStartOf="@+id/createReportTitleText" />
+
+    <EditText
+        android:id="@+id/createReportTitleEdit"
+        android:layout_width="310dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/border"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/createReportDescriptionText"
+        app:layout_constraintStart_toStartOf="@+id/createReportTitleText" />
+
+    <EditText
+        android:id="@+id/createReportDescriptionEdit"
+        android:layout_width="310dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/border"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/createReportTypeText"
+        app:layout_constraintStart_toStartOf="@+id/createReportTitleText" />
+
+    <Spinner
+        android:id="@+id/createReportTypeSpinner"
+        android:layout_width="310dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/border"
+        android:entries="@array/typeFilterCreate"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/createReportTitleText" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="160dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/image"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/createReportClearText"
+        app:layout_constraintStart_toStartOf="@+id/createReportTitleEdit" />
+
+    <Button
+        android:id="@+id/createReportCreateBtn"
+        android:layout_width="@dimen/smallBtnWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:height="@dimen/btnHeight"
+        android:onClick="createClick"
+        android:text="@string/create"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/createReportCancelBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/createReportCancelBtn"
+        android:layout_width="@dimen/smallBtnWidth"
+        android:layout_height="wrap_content"
+        android:height="@dimen/btnHeight"
+        android:onClick="cancelClick"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="@+id/createReportCreateBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/createReportCreateBtn" />
+
+    <ImageView
+        android:id="@+id/createReportGalleryImage"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="getGalleryImage"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/createReportClearText"
+        app:layout_constraintEnd_toStartOf="@+id/createReportPhotoImage"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/upload_gallery"
+        tools:srcCompat="@drawable/upload_gallery" />
+
+    <ImageView
+        android:id="@+id/createReportPhotoImage"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:onClick="takePhoto"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/createReportGalleryImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/createReportGalleryImage"
+        app:srcCompat="@drawable/take_photo"
+        tools:srcCompat="@drawable/take_photo" />
+
+    <TextView
+        android:id="@+id/createReportClearText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:onClick="clearImage"
+        android:text="@string/clearImage"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/createReportImage"
+        android:layout_width="208dp"
+        android:layout_height="138dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/createReportClearText"
+        app:layout_constraintEnd_toStartOf="@+id/createReportPhotoImage"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toEndOf="@+id/createReportGalleryImage"
+        app:layout_constraintTop_toTopOf="@+id/createReportGalleryImage"
+        tools:srcCompat="@tools:sample/avatars" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
