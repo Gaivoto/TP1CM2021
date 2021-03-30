@@ -11,7 +11,6 @@
         android:id="@+id/createReportTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/createReport"
         android:textColor="@color/black"
@@ -25,9 +24,9 @@
         android:id="@+id/createReportTitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginBottom="3dp"
         android:fontFamily="sans-serif-light"
         android:text="@string/title"
         android:textColor="@color/black"
@@ -39,7 +38,7 @@
         android:id="@+id/createReportDescriptionText"
         android:layout_width="104dp"
         android:layout_height="26dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="3dp"
         android:fontFamily="sans-serif-light"
         android:text="@string/description"
         android:textColor="@color/black"
@@ -51,19 +50,19 @@
         android:id="@+id/createReportTypeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="3dp"
         android:fontFamily="sans-serif-light"
         android:text="@string/type"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/createReportTypeSpinner"
-        app:layout_constraintStart_toStartOf="@+id/createReportTitleText" />
+        app:layout_constraintStart_toStartOf="@+id/createReportTypeSpinner" />
 
     <EditText
         android:id="@+id/createReportTitleEdit"
-        android:layout_width="310dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="280dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="6dp"
         android:background="@drawable/border"
         android:ems="10"
         android:fontFamily="sans-serif-light"
@@ -74,8 +73,8 @@
 
     <EditText
         android:id="@+id/createReportDescriptionEdit"
-        android:layout_width="310dp"
-        android:layout_height="80dp"
+        android:layout_width="280dp"
+        android:layout_height="120dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/border"
         android:ems="10"
@@ -83,36 +82,38 @@
         android:inputType="textPersonName"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/createReportTypeText"
+        app:layout_constraintBottom_toTopOf="@+id/createReportCreateBtn"
         app:layout_constraintStart_toStartOf="@+id/createReportTitleText" />
 
     <Spinner
         android:id="@+id/createReportTypeSpinner"
-        android:layout_width="310dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="280dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="6dp"
         android:background="@drawable/border"
         android:entries="@array/typeFilterCreate"
         app:layout_constraintBottom_toTopOf="@+id/createReportImageText"
-        app:layout_constraintStart_toStartOf="@+id/createReportTitleText" />
+        app:layout_constraintStart_toStartOf="@+id/createReportImageText" />
 
     <TextView
         android:id="@+id/createReportImageText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="160dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="3dp"
         android:fontFamily="sans-serif-light"
         android:text="@string/image"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/createReportClearText"
-        app:layout_constraintStart_toStartOf="@+id/createReportTitleEdit" />
+        app:layout_constraintBottom_toTopOf="@+id/createReportGalleryImage"
+        app:layout_constraintStart_toEndOf="@+id/createReportTitleEdit" />
 
     <Button
         android:id="@+id/createReportCreateBtn"
         android:layout_width="@dimen/smallBtnWidth"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="2dp"
         android:height="@dimen/btnHeight"
         android:onClick="createClick"
         android:text="@string/create"
@@ -124,11 +125,12 @@
     <Button
         android:id="@+id/createReportCancelBtn"
         android:layout_width="@dimen/smallBtnWidth"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginBottom="2dp"
         android:height="@dimen/btnHeight"
         android:onClick="cancelClick"
         android:text="@string/cancel"
-        app:layout_constraintBottom_toBottomOf="@+id/createReportCreateBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/createReportCreateBtn" />
@@ -136,26 +138,24 @@
     <ImageView
         android:id="@+id/createReportGalleryImage"
         android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_marginBottom="20dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="5dp"
         android:onClick="getGalleryImage"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/createReportClearText"
-        app:layout_constraintEnd_toStartOf="@+id/createReportPhotoImage"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/createReportImageText"
         app:srcCompat="@drawable/upload_gallery"
         tools:srcCompat="@drawable/upload_gallery" />
 
     <ImageView
         android:id="@+id/createReportPhotoImage"
         android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:onClick="takePhoto"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/createReportGalleryImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/createReportGalleryImage"
         app:srcCompat="@drawable/take_photo"
         tools:srcCompat="@drawable/take_photo" />
@@ -164,26 +164,24 @@
         android:id="@+id/createReportClearText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="5dp"
         android:onClick="clearImage"
         android:text="@string/clearImage"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/createReportCancelBtn"
+        app:layout_constraintStart_toStartOf="@+id/createReportGalleryImage" />
 
     <ImageView
         android:id="@+id/createReportImage"
-        android:layout_width="208dp"
-        android:layout_height="138dp"
-        android:layout_marginBottom="10dp"
+        android:layout_width="214dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/createReportClearText"
-        app:layout_constraintEnd_toStartOf="@+id/createReportPhotoImage"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toEndOf="@+id/createReportGalleryImage"
-        app:layout_constraintTop_toTopOf="@+id/createReportGalleryImage"
+        app:layout_constraintBottom_toBottomOf="@+id/createReportGalleryImage"
+        app:layout_constraintStart_toStartOf="@+id/createReportGalleryImage"
         tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
