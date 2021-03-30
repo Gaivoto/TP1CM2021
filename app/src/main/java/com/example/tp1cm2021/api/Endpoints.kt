@@ -38,4 +38,18 @@ interface Endpoints {
         @Part("tipo") tipo: RequestBody,
         @Part image: MultipartBody.Part
     ): Call<ReportNonSelectOutput>
+
+    //update report endpoint
+    @PUT("api/reports/{id}")
+    fun updateReport(
+        @Path("id") id: Int,
+        @Body putBody: PutBody
+    ): Call<ReportNonSelectOutput>
+
+    //delete report endpoint
+    @DELETE("api/reports/{id}")
+    fun deleteReport(
+        @Path("id") id: Int,
+        @Query("username") username: String
+    ): Call<ReportNonSelectOutput>
 }

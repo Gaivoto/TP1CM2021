@@ -153,12 +153,13 @@ class CreateReport : AppCompatActivity() {
             call.enqueue(object : Callback<ReportNonSelectOutput> {
                 override fun onResponse(call: Call<ReportNonSelectOutput>, response: Response<ReportNonSelectOutput>) {
                     //if the request is successful, say so in a toast and then go to the report map activity
-                    if(response.isSuccessful){
+                    if(response.isSuccessful && response.body()!!.error == null){
                         Toast.makeText(this@CreateReport, getString(R.string.successCreatingReport), Toast.LENGTH_SHORT).show()
                         val intent2 = Intent(this@CreateReport, ReportMap::class.java)
                         startActivity(intent2)
                         finish()
                     } else {
+                        Log.i("AAAAA", response.body()!!.error)
                         Toast.makeText(this@CreateReport, getString(R.string.errorCreatingReport), Toast.LENGTH_SHORT).show()
                     }
                 }

@@ -15,7 +15,6 @@
     <string name="createNote">Criar Nota</string>
     <string name="editNote">Editar Nota</string>
     <string name="deleteNote">Apagar Nota</string>
-    <string name="sureDelete">"Tem a certeza que quer apagar a nota "</string>
     <string name="lastModified">Modificado em:</string>
     <string name="noTitle">O título não pode estar vazio</string>
     <string name="noDescription">A descrição não pode estar vazia</string>
@@ -43,4 +42,14 @@
     <string name="errorCreatingReport">Ocorreu um erro ao reportar a situação</string>
     <string name="construction">Obras</string>
     <string name="successCreatingReport">Situação reportada com sucesso</string>
+    <string name="close">Fechar</string>
+    <string name="save">Guardar</string>
+    <string name="createdBy">Criado pelo utilizador:</string>
+    <string name="sureDeleteNote">"Tem a certeza que quer apagar a nota "</string>
+    <string name="sureDeleteReport">"Tem a certeza que quer apagar a situação "</string>
+    <string name="deleteReport">Apagar Situação</string>
+    <string name="errorDeletingReport">Ocorreu um erro ao eliminar a situação</string>
+    <string name="successDeletingReport">Situação eliminada com sucesso</string>
+    <string name="errorUpdatingReport">Ocorreu um erro ao atualizar a situação</string>
+    <string name="successUpdatingReport">Situação atualizada com sucesso</string>
 </resources>

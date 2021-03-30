@@ -1,5 +1,6 @@
 package com.example.tp1cm2021.fragments
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
@@ -23,6 +24,7 @@ class DeleteNoteFragment : DialogFragment() {
         fun onCancelDelete(dialog: DialogFragment)
     }
 
+    @SuppressLint("UseRequireInsteadOfGet")
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             val builder = AlertDialog.Builder(it)
@@ -33,7 +35,8 @@ class DeleteNoteFragment : DialogFragment() {
 
             //display clicked note information on the dialog
             dialogView.findViewById<TextView>(R.id.idDelete).text = arguments!!["id"].toString()
-            dialogView.findViewById<TextView>(R.id.textDelete).text = getString(R.string.sureDelete) + " '" + arguments!!["title"].toString() + "'?"
+            dialogView.findViewById<TextView>(R.id.textDelete).text = arguments!!["message"].toString() + " '" + arguments!!["title"].toString() + "'?"
+            dialogView.findViewById<TextView>(R.id.bigTextDelete).text = arguments!!["dialogTitle"].toString()
 
             val deleteBtn = dialogView.findViewById<Button>(R.id.deleteBtnDelete)
             val cancelBtn = dialogView.findViewById<Button>(R.id.cancelBtnDelete)

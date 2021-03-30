@@ -35,7 +35,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ReportMap : AppCompatActivity(), OnMapReadyCallback {
+class ReportMap : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
     private lateinit var mMap: GoogleMap
     private lateinit var lastLocation: Location
@@ -82,11 +82,7 @@ class ReportMap : AppCompatActivity(), OnMapReadyCallback {
                         }
 
                         //format data in a string and pass it as the info window's snippet
-                        var reportData: String = report.description + "»" + report.tipo + "»" + report.lastModified + "»" + report.status + "»"
-
-                        if(report.image != null) {
-                            reportData += report.image
-                        }
+                        var reportData: String = report.reportID.toString() + "»" + report.description + "»" + report.tipo + "»" + report.lastModified + "»" + report.status + "»" + report.username + "»" + report.image
 
                         mMap.addMarker(MarkerOptions()
                                 .position(LatLng(report.lat.toDouble(), report.lon.toDouble()))
@@ -115,8 +111,20 @@ class ReportMap : AppCompatActivity(), OnMapReadyCallback {
         //change marker info window to my custom info window
         mMap.setInfoWindowAdapter(CustomMapInfoWindow(this))
 
+        //set a click listener on the map marker's info windows
+        mMap.setOnInfoWindowClickListener(this)
+
         //get current location and center on it
         getCurrentLocation()
+    }
+
+    //called when a map marker info window is clicked - open a activity with that marker's info that allows the creator to edit or delete it
+    override fun onInfoWindowClick(marker: Marker) {
+        val intent = Intent(this, EditDeleteReport::class.java).apply {
+            putExtra("TITLE", marker.title)
+            putExtra("DETAILS", marker.snippet)
+        }
+        startActivity(intent)
     }
 
     //function to get the user's current location

@@ -2,6 +2,7 @@ package com.example.tp1cm2021.map
 
 import android.app.Activity
 import android.content.Context
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.Spinner
@@ -20,6 +21,7 @@ class CustomMapInfoWindow(context: Context) : GoogleMap.InfoWindowAdapter {
 
     private fun renderWindowText(marker: Marker, view: View){
 
+        val idHolder = view.findViewById<TextView>(R.id.infoWindowIdHolder)
         val windowTitle = view.findViewById<TextView>(R.id.markerWindowTitle)
         val windowDescription = view.findViewById<TextView>(R.id.markerWindowDescription)
         val windowDate = view.findViewById<TextView>(R.id.markerWindowDate)
@@ -27,15 +29,21 @@ class CustomMapInfoWindow(context: Context) : GoogleMap.InfoWindowAdapter {
         val windowImage = view.findViewById<ImageView>(R.id.markerWindowImage)
 
         //take the data passed in a string as the info window's snippet and display it on the window's fields
-        val description: String = marker.snippet.substring(0, marker.snippet.indexOf("»"))
+        val id: String = marker.snippet.substring(0, marker.snippet.indexOf("»"))
         var substring: String = marker.snippet.substring(marker.snippet.indexOf("»") + 1)
+        val description: String = substring.substring(0, substring.indexOf("»"))
+        substring = substring.substring(substring.indexOf("»") + 1)
         val tipo: String = substring.substring(0, substring.indexOf("»"))
         substring = substring.substring(substring.indexOf("»") + 1)
         val lastModified: String = substring.substring(0, substring.indexOf("»"))
         substring = substring.substring(substring.indexOf("»") + 1)
         val status: String = substring.substring(0, substring.indexOf("»"))
-        substring = substring.substring(substring.indexOf("»"))
+        substring = substring.substring(substring.indexOf("»") + 1)
+        val username: String = substring.substring(0, substring.indexOf("»"))
+        substring = substring.substring(substring.indexOf("»") + 1)
+        val image: String = substring.substring(0)
 
+        idHolder.text = id
         windowTitle.text = marker.title
         windowDescription.text = description
         windowType.text = when (tipo) {
@@ -50,11 +58,8 @@ class CustomMapInfoWindow(context: Context) : GoogleMap.InfoWindowAdapter {
             windowDate.text = mContext.getString(R.string.lastModified) + " " + lastModified
         }
 
-        //if the report has an image, load it using the picasso library
-        val image: String = substring.substring(1)
-
         Picasso.get()
-                .load("http://cmtp1.000webhostapp.com/slimCMTP1/uploads/" + image + ".png")
+                .load("http://10.0.2.2/slimCMTP1/uploads/" + image + ".png")
                 .placeholder(R.drawable.marker_info_placeholder)
                 .error(R.drawable.marker_info_placeholder)
                 .into(windowImage, object : Callback {

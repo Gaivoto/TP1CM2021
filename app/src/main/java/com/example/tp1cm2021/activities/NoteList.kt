@@ -155,6 +155,8 @@ class NoteList : AppCompatActivity(), CreateNoteFragment.NoteCreateDialogListene
         //add clicked note information to note dialog
         args.putString("id", listItem.findViewById<TextView>(R.id.listItemId).text.toString())
         args.putString("title", listItem.findViewById<TextView>(R.id.noteTitle).text.toString())
+        args.putString("message", getString(R.string.sureDeleteNote))
+        args.putString("dialogTitle", getString(R.string.deleteNote))
 
         deleteNoteFragment.arguments = args
         deleteNoteFragment.show(supportFragmentManager, "DeleteNoteFragment")

@@ -8,7 +8,7 @@ object ServiceBuilder {
     private val client = OkHttpClient.Builder().build()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://cmtp1.000webhostapp.com/slimCMTP1/")
+        .baseUrl("http://10.0.2.2/slimCMTP1/")
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build()

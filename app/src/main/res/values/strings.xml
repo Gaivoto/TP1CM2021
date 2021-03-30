@@ -15,7 +15,7 @@
     <string name="createNote">Create Note</string>
     <string name="editNote">Edit Note</string>
     <string name="deleteNote">Delete Note</string>
-    <string name="sureDelete">Are you sure you want to delete the note </string>
+    <string name="sureDeleteNote">Are you sure you want to delete the note </string>
     <string name="lastModified">Last modified:</string>
     <string name="noTitle">The title cannot be empty</string>
     <string name="noDescription">The description cannot be empty</string>
@@ -57,4 +57,13 @@
     <string name="noImage">No image was selected for this report</string>
     <string name="errorCreatingReport">There was an error while creating the report</string>
     <string name="successCreatingReport">Report was created successfully</string>
+    <string name="close">Close</string>
+    <string name="save">Save</string>
+    <string name="createdBy">Created by user:</string>
+    <string name="sureDeleteReport">Are you sure you want to delete the report</string>
+    <string name="deleteReport">Delete Report</string>
+    <string name="errorDeletingReport">There was an error while deleting the report</string>
+    <string name="successDeletingReport">Report was deleted successfully</string>
+    <string name="errorUpdatingReport">There was an error while updating the report</string>
+    <string name="successUpdatingReport">Report was updated successfully</string>
 </resources>

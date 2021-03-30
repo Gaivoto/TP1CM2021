@@ -27,3 +27,9 @@ data class ReportNonSelectOutput (
     val error: String?,
     val result: String?
 )
+
+data class PutBody (
+    val title: String,
+    val description: String,
+    val username: String
+)

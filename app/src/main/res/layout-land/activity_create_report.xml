@@ -79,6 +79,7 @@
         android:background="@drawable/border"
         android:ems="10"
         android:fontFamily="sans-serif-light"
+        android:gravity="start|top"
         android:inputType="textPersonName"
         android:textColor="@color/black"
         android:textSize="18sp"
