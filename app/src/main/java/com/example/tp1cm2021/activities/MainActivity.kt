@@ -88,10 +88,14 @@ class MainActivity : AppCompatActivity() {
                         } else {
                             //if the login credentials are valid and if the keep me logged checkbox is checked, store those credentials in the stored preferences
                             //for future automatic logins
+                            var sharedPreferences: SharedPreferences = getSharedPreferences(getString(R.string.preferenceFile), Context.MODE_PRIVATE)
+                                with (sharedPreferences.edit()) {
+                                    putString(getString(R.string.usernameP), username)
+                                    commit()
+                                }
                             if((view.parent as ViewGroup).findViewById<CheckBox>(R.id.loggedCheck).isChecked){
-                                val sharedPreferences: SharedPreferences = getSharedPreferences(getString(R.string.preferenceFile), Context.MODE_PRIVATE)
+                                sharedPreferences = getSharedPreferences(getString(R.string.preferenceFile), Context.MODE_PRIVATE)
                                     with (sharedPreferences.edit()) {
-                                        putString(getString(R.string.usernameP), username)
                                         putString(getString(R.string.passwordP), password)
                                         commit()
                                     }

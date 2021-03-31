@@ -205,11 +205,7 @@ class ReportMap : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWindo
                         }
 
                         //format data in a string and pass it as the info window's snippet
-                        var reportData: String = report.description + "»" + report.tipo + "»" + report.lastModified + "»" + report.status + "»"
-
-                        if(report.image != null) {
-                            reportData += report.image
-                        }
+                        var reportData: String = report.reportID.toString() + "»" + report.description + "»" + report.tipo + "»" + report.lastModified + "»" + report.status + "»" + report.username + "»" + report.image
 
                         mMap.addMarker(MarkerOptions()
                             .position(LatLng(report.lat.toDouble(), report.lon.toDouble()))
