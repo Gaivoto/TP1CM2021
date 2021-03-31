@@ -27,6 +27,7 @@ class CustomMapInfoWindow(context: Context) : GoogleMap.InfoWindowAdapter {
         val windowDate = view.findViewById<TextView>(R.id.markerWindowDate)
         val windowType = view.findViewById<TextView>(R.id.markerWindowType2)
         val windowImage = view.findViewById<ImageView>(R.id.markerWindowImage)
+        Log.i("AAAA", marker.snippet)
 
         //take the data passed in a string as the info window's snippet and display it on the window's fields
         val id: String = marker.snippet.substring(0, marker.snippet.indexOf("»"))

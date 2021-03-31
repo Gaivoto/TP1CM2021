@@ -9,80 +9,81 @@
 
     <TextView
         android:id="@+id/reportDetailsTitle"
-        android:layout_width="340dp"
+        android:layout_width="320dp"
         android:layout_height="32dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="6dp"
         android:fontFamily="sans-serif-medium"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/reportDetailsDescription"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/reportDetailsType"
+        app:layout_constraintStart_toStartOf="@+id/reportDetailsDescription" />
 
     <TextView
         android:id="@+id/reportDetailsType"
-        android:layout_width="340dp"
+        android:layout_width="320dp"
         android:layout_height="28dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-light"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/reportDetailsDescription"
+        app:layout_constraintStart_toStartOf="@+id/reportDetailsDescription" />
+
+    <TextView
+        android:id="@+id/reportDetailsDate"
+        android:layout_width="320dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="sans-serif-light"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/reportDetailsDescription" />
+
+    <TextView
+        android:id="@+id/reportDetailsUser"
+        android:layout_width="320dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="6dp"
         android:fontFamily="sans-serif-light"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/reportDetailsDate"
-        app:layout_constraintStart_toStartOf="@+id/reportDetailsTitle" />
+        app:layout_constraintStart_toStartOf="@+id/reportDetailsDescription" />
 
     <TextView
-        android:id="@+id/reportDetailsDate"
-        android:layout_width="340dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="20dp"
+        android:id="@+id/reportDetailsDescription"
+        android:layout_width="320dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="6dp"
         android:fontFamily="sans-serif-light"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/reportDetailsUser"
-        app:layout_constraintStart_toStartOf="@+id/reportDetailsTitle" />
-
-    <TextView
-        android:id="@+id/reportDetailsUser"
-        android:layout_width="340dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="sans-serif-light"
-        android:text="TextView"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/reportDetailsImage"
-        app:layout_constraintStart_toStartOf="@+id/reportDetailsTitle" />
-
-    <TextView
-        android:id="@+id/reportDetailsDescription"
-        android:layout_width="340dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="sans-serif-light"
-        android:text="TextView"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/reportDetailsType"
-        app:layout_constraintStart_toStartOf="@+id/reportDetailsTitle" />
+        app:layout_constraintEnd_toStartOf="@+id/reportDetailsImage"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/reportDetailsImage"
-        android:layout_width="340dp"
+        android:layout_width="320dp"
         android:layout_height="220dp"
-        android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/reportDetailsCloseBtn"
-        app:layout_constraintStart_toStartOf="@+id/reportDetailsTitle"
+        app:layout_constraintBottom_toBottomOf="@+id/reportDetailsDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/reportDetailsDescription"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/reportDetailsEditBtn"
         android:layout_width="@dimen/verySmallBtnWidth"
-        android:layout_height="@dimen/btnHeight"
-        android:layout_marginBottom="15dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
         android:onClick="editBtnClicked"
         android:text="@string/edit"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,8 +94,8 @@
     <Button
         android:id="@+id/reportDetailsDeleteBtn"
         android:layout_width="@dimen/verySmallBtnWidth"
-        android:layout_height="@dimen/btnHeight"
-        android:layout_marginBottom="15dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
         android:onClick="deleteBtnClicked"
         android:text="@string/delete"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,8 +106,8 @@
     <Button
         android:id="@+id/reportDetailsCloseBtn"
         android:layout_width="@dimen/verySmallBtnWidth"
-        android:layout_height="@dimen/btnHeight"
-        android:layout_marginBottom="15dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
         android:onClick="closeBtnClicked"
         android:text="@string/close"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -117,8 +118,8 @@
     <Button
         android:id="@+id/reportDetailsConfirmBtn"
         android:layout_width="@dimen/verySmallBtnWidth"
-        android:layout_height="@dimen/btnHeight"
-        android:layout_marginBottom="15dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
         android:onClick="confirmBtnClicked"
         android:text="@string/save"
         android:visibility="invisible"
@@ -130,8 +131,8 @@
     <Button
         android:id="@+id/reportDetailsCancelBtn"
         android:layout_width="@dimen/verySmallBtnWidth"
-        android:layout_height="@dimen/btnHeight"
-        android:layout_marginBottom="15dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
         android:onClick="cancelBtnClicked"
         android:text="@string/cancel"
         android:visibility="invisible"
@@ -142,7 +143,7 @@
 
     <EditText
         android:id="@+id/reportDetailsTitleEdit"
-        android:layout_width="340dp"
+        android:layout_width="320dp"
         android:layout_height="35dp"
         android:background="@drawable/border"
         android:ems="10"
@@ -154,8 +155,8 @@
 
     <EditText
         android:id="@+id/reportDetailsDescriptionEdit"
-        android:layout_width="340dp"
-        android:layout_height="120dp"
+        android:layout_width="320dp"
+        android:layout_height="100dp"
         android:background="@drawable/border"
         android:ems="10"
         android:gravity="start|top"
@@ -170,6 +171,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
