@@ -5,7 +5,6 @@ import android.content.Context
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
-import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import com.example.tp1cm2021.R

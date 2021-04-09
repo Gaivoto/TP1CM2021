@@ -3,12 +3,9 @@ package com.example.tp1cm2021.fragments
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
-import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.example.tp1cm2021.R
-import com.example.tp1cm2021.entities.Note
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class NoteDetailsFragment() : DialogFragment() {
 

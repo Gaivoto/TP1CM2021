@@ -3,13 +3,13 @@ package com.example.tp1cm2021.activities
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.tp1cm2021.R
 import com.example.tp1cm2021.api.Endpoints
 import com.example.tp1cm2021.api.LoginOutput
@@ -17,6 +17,8 @@ import com.example.tp1cm2021.api.ServiceBuilder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.StringBuilder
+import java.security.MessageDigest
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,9 +33,21 @@ class MainActivity : AppCompatActivity() {
 
         //if those values are valid make a login request to the api
         if(username != null && password != null && username != "" && password != ""){
-            val request = ServiceBuilder.buildService(Endpoints::class.java)
-            val call = request.login(username!!, password!!)
+            //hash the password using the SHA-256 algorithm so the original password does not leave the device and only the hash is compared in the backend
+            val md: MessageDigest = MessageDigest.getInstance("SHA-256")
 
+            md.update(password.toByteArray(Charsets.UTF_8))
+            val clone: MessageDigest = md.clone() as MessageDigest
+            val digest: ByteArray = clone.digest()
+
+            val hashedPassword = StringBuilder()
+
+            digest.forEach { byte -> hashedPassword.append(String.format("%02X", byte)) }
+
+            val request = ServiceBuilder.buildService(Endpoints::class.java)
+            val call = request.login(username, hashedPassword.toString())
+
+            //make the login request to the API
             call.enqueue(object : Callback<LoginOutput> {
                 //if the login request is successful, go to the map activity
                 //if the login credentials are invalid show a toast
@@ -73,10 +87,20 @@ class MainActivity : AppCompatActivity() {
         } else if(password == ""){
             Toast.makeText(this@MainActivity, getString(R.string.noPassword), Toast.LENGTH_SHORT).show()
         } else {
+            //hash the password using the SHA-256 algorithm so the original password does not leave the device and only the hash is compared in the backend
+            val md: MessageDigest = MessageDigest.getInstance("SHA-256")
+
+            md.update(password.toByteArray(Charsets.UTF_8))
+            val clone: MessageDigest = md.clone() as MessageDigest
+            val digest: ByteArray = clone.digest()
+
+            val hashedPassword = StringBuilder()
+
+            digest.forEach { byte -> hashedPassword.append(String.format("%02X", byte)) }
 
             //if they are not empty make a login request to the api
             val request = ServiceBuilder.buildService(Endpoints::class.java)
-            val call = request.login(username, password)
+            val call = request.login(username, hashedPassword.toString())
 
             call.enqueue(object : Callback<LoginOutput> {
                 //if the login request is successful, go to the map activity

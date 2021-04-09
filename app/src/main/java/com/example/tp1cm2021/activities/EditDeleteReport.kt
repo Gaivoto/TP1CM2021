@@ -5,7 +5,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
@@ -17,8 +16,6 @@ import com.example.tp1cm2021.api.ReportNonSelectOutput
 import com.example.tp1cm2021.api.ServiceBuilder
 import com.example.tp1cm2021.fragments.DeleteNoteFragment
 import com.squareup.picasso.Picasso
-import okhttp3.MediaType
-import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
