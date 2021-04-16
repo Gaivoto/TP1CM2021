@@ -48,7 +48,7 @@
     <string name="accident">Accident</string>
     <string name="construction">Construction</string>
     <string name="other">Other</string>
-    <string name="negativeDistance">The distance value cannot be negative</string>
+    <string name="negativeDistance">The distance value has to be positive</string>
     <string name="createReport">Create Report</string>
     <string name="type">Type</string>
     <string name="image">Image</string>
@@ -66,4 +66,10 @@
     <string name="successDeletingReport">Report was deleted successfully</string>
     <string name="errorUpdatingReport">There was an error while updating the report</string>
     <string name="successUpdatingReport">Report was updated successfully</string>
+    <string name="noConnection">Could not connect to the server</string>
+    <string name="createdYou">Created by you</string>
+    <string name="crratedOther">Created by another</string>
+    <string name="createdBy2">Created by:</string>
+    <string name="you">You</string>
+    <string name="another">Another</string>
 </resources>

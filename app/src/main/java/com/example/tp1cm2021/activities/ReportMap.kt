@@ -63,6 +63,11 @@ class ReportMap : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWindo
         //get location provider
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
+        //get logged in user from shared preferences
+        val sharedPreferences: SharedPreferences = getSharedPreferences(getString(R.string.preferenceFile), Context.MODE_PRIVATE)
+
+        val username: String? = sharedPreferences.getString(getString(R.string.usernameP), "")
+
         val request = ServiceBuilder.buildService(Endpoints::class.java)
         val call = request.getReports(0.01f, 0.01f, null, null)
 
@@ -73,11 +78,23 @@ class ReportMap : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWindo
                 //if not, display a toast saying so
                 if(response.isSuccessful){
                     for(report in response.body()!!) {
-                        val bitmapDescriptor: BitmapDescriptor? = when (report.tipo) {
-                            "Acidente" -> bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_accident)
-                            "Obras" -> bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_construction)
-                            else -> {
-                                bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_other)
+                        var bitmapDescriptor: BitmapDescriptor?
+
+                        if(username == report.username){
+                            bitmapDescriptor = when (report.tipo) {
+                                "Acidente" -> bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_accident_user)
+                                "Obras" -> bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_construction_user)
+                                else -> {
+                                    bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_other_user)
+                                }
+                            }
+                        } else {
+                            bitmapDescriptor = when (report.tipo) {
+                                "Acidente" -> bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_accident)
+                                "Obras" -> bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_construction)
+                                else -> {
+                                    bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_other)
+                                }
                             }
                         }
 
@@ -186,6 +203,11 @@ class ReportMap : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWindo
         //remove all the markers from the map
         mMap.clear()
 
+        //get logged in user from shared preferences
+        val sharedPreferences: SharedPreferences = getSharedPreferences(getString(R.string.preferenceFile), Context.MODE_PRIVATE)
+
+        val username: String? = sharedPreferences.getString(getString(R.string.usernameP), "")
+
         val request = ServiceBuilder.buildService(Endpoints::class.java)
         val call = request.getReports(lastLocation.latitude.toFloat(), lastLocation.longitude.toFloat(), radiusFinal, typeFinal)
 
@@ -196,11 +218,22 @@ class ReportMap : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWindo
                 //if not, display a toast saying so
                 if(response.isSuccessful){
                     for(report in response.body()!!) {
-                        val bitmapDescriptor: BitmapDescriptor? = when (report.tipo) {
-                            "Acidente" -> bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_accident)
-                            "Obras" -> bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_construction)
-                            else -> {
-                                bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_other)
+                        var bitmapDescriptor: BitmapDescriptor?
+                        if(username == report.username){
+                            bitmapDescriptor = when (report.tipo) {
+                                "Acidente" -> bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_accident_user)
+                                "Obras" -> bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_construction_user)
+                                else -> {
+                                    bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_other_user)
+                                }
+                            }
+                        } else {
+                            bitmapDescriptor = when (report.tipo) {
+                                "Acidente" -> bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_accident)
+                                "Obras" -> bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_construction)
+                                else -> {
+                                    bitmapDescriptorFromVector(this@ReportMap, R.drawable.map_marker_other)
+                                }
                             }
                         }
 

@@ -49,17 +49,15 @@ class NoteList : AppCompatActivity(), CreateNoteFragment.NoteCreateDialogListene
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
-        val sharedPreferences: SharedPreferences = getSharedPreferences(getString(R.string.preferenceFile), Context.MODE_PRIVATE)
-
-        //get username and password values from the shared preferences
-        val username: String? = sharedPreferences.getString(getString(R.string.usernameP), "")
-        val password: String? = sharedPreferences.getString(getString(R.string.passwordP), "")
+        //get value passed from the lst activity and if the last activity was the login activity do not show the bottom nav bar
+        //else, show the bottom nav bar
+        val showBar: Boolean = intent.getBooleanExtra("BOT_NAV_BAR", true)
 
         //hide bottom navigation bar if the user is not logged in and show it if the user is logged in
-        if(username == "" && password == ""){
-            bottomNav.visibility = View.INVISIBLE
-        } else {
+        if(showBar){
             bottomNav.visibility = View.VISIBLE
+        } else {
+            bottomNav.visibility = View.INVISIBLE
         }
 
         //call functions when clicking on items on the bottom navigation bar

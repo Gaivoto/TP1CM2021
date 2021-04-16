@@ -32,7 +32,7 @@
     <string name="distance">Distância:</string>
     <string name="accident">Acidente</string>
     <string name="other">Outro</string>
-    <string name="negativeDistance">O valor da distância não pode ser negativo</string>
+    <string name="negativeDistance">O valor da distância tem de ser positivo</string>
     <string name="createReport">Reportar Situação</string>
     <string name="type">Tipo</string>
     <string name="image">Imagem</string>
@@ -52,4 +52,10 @@
     <string name="successDeletingReport">Situação eliminada com sucesso</string>
     <string name="errorUpdatingReport">Ocorreu um erro ao atualizar a situação</string>
     <string name="successUpdatingReport">Situação atualizada com sucesso</string>
+    <string name="noConnection">Falha ao conectar ao servidor</string>
+    <string name="createdYou">Criado por si</string>
+    <string name="crratedOther">Criado por outro</string>
+    <string name="you">Si</string>
+    <string name="createdBy2">Criado por:</string>
+    <string name="another">Outro</string>
 </resources>

@@ -44,18 +44,6 @@
         app:layout_constraintStart_toStartOf="@+id/reportDetailsDescription" />
 
     <TextView
-        android:id="@+id/reportDetailsUser"
-        android:layout_width="320dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="6dp"
-        android:fontFamily="sans-serif-light"
-        android:text="TextView"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/reportDetailsDate"
-        app:layout_constraintStart_toStartOf="@+id/reportDetailsDescription" />
-
-    <TextView
         android:id="@+id/reportDetailsDescription"
         android:layout_width="320dp"
         android:layout_height="100dp"
@@ -64,7 +52,7 @@
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/reportDetailsUser"
+        app:layout_constraintBottom_toTopOf="@+id/reportDetailsDate"
         app:layout_constraintEnd_toStartOf="@+id/reportDetailsImage"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
@@ -157,12 +145,14 @@
         android:id="@+id/reportDetailsDescriptionEdit"
         android:layout_width="320dp"
         android:layout_height="100dp"
+        android:layout_marginBottom="6dp"
         android:background="@drawable/border"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textPersonName"
         android:textColor="@color/black"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/reportDetailsDate"
         app:layout_constraintStart_toStartOf="@+id/reportDetailsDescription"
         app:layout_constraintTop_toTopOf="@+id/reportDetailsDescription" />
 

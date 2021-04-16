@@ -42,18 +42,6 @@
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/reportDetailsUser"
-        app:layout_constraintStart_toStartOf="@+id/reportDetailsTitle" />
-
-    <TextView
-        android:id="@+id/reportDetailsUser"
-        android:layout_width="340dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="sans-serif-light"
-        android:text="TextView"
-        android:textColor="@color/black"
-        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/reportDetailsImage"
         app:layout_constraintStart_toStartOf="@+id/reportDetailsTitle" />
 
@@ -72,7 +60,7 @@
     <ImageView
         android:id="@+id/reportDetailsImage"
         android:layout_width="340dp"
-        android:layout_height="220dp"
+        android:layout_height="268dp"
         android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toTopOf="@+id/reportDetailsCloseBtn"
         app:layout_constraintStart_toStartOf="@+id/reportDetailsTitle"

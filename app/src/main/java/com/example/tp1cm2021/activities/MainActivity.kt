@@ -29,50 +29,29 @@ class MainActivity : AppCompatActivity() {
         val sharedPreferences: SharedPreferences = getSharedPreferences(getString(R.string.preferenceFile), Context.MODE_PRIVATE)
 
         val username: String? = sharedPreferences.getString(getString(R.string.usernameP), "")
-        val password: String? = sharedPreferences.getString(getString(R.string.passwordP), "")
+        val autoLogin: Boolean = sharedPreferences.getBoolean("autoLogin", false)
 
-        //if those values are valid make a login request to the api
-        if(username != null && password != null && username != "" && password != ""){
-            //hash the password using the SHA-256 algorithm so the original password does not leave the device and only the hash is compared in the backend
-            val md: MessageDigest = MessageDigest.getInstance("SHA-256")
-
-            md.update(password.toByteArray(Charsets.UTF_8))
-            val clone: MessageDigest = md.clone() as MessageDigest
-            val digest: ByteArray = clone.digest()
-
-            val hashedPassword = StringBuilder()
-
-            digest.forEach { byte -> hashedPassword.append(String.format("%02X", byte)) }
-
-            val request = ServiceBuilder.buildService(Endpoints::class.java)
-            val call = request.login(username, hashedPassword.toString())
-
-            //make the login request to the API
-            call.enqueue(object : Callback<LoginOutput> {
-                //if the login request is successful, go to the map activity
-                //if the login credentials are invalid show a toast
-                override fun onResponse(call: Call<LoginOutput>, response: Response<LoginOutput>) {
-                    if(response.isSuccessful){
-                        if(response.body()!!.error != null) {
-                            Toast.makeText(this@MainActivity, getString(R.string.failedLogin), Toast.LENGTH_SHORT).show()
-                        } else {
-                            val intent = Intent(this@MainActivity, ReportMap::class.java)
-                            startActivity(intent)
-                            finish()
-                        }
-                    }
-                }
-
-                override fun onFailure(call: Call<LoginOutput>, t: Throwable) {
-                    Toast.makeText(this@MainActivity, getString(R.string.failedLogin), Toast.LENGTH_SHORT).show()
-                }
-            })
+        //if the user previously chose to login automatically, do so now
+        //else, clear the username from the shared preferences
+        if(username != "" && autoLogin) {
+            val intent = Intent(this@MainActivity, ReportMap::class.java)
+            startActivity(intent)
+            finish()
+        } else {
+            var sharedPreferences: SharedPreferences = getSharedPreferences(getString(R.string.preferenceFile), Context.MODE_PRIVATE)
+            with (sharedPreferences.edit()) {
+                putString(getString(R.string.usernameP), "")
+                putBoolean("autoLogin", false)
+                commit()
+            }
         }
     }
 
     //move to note list activity
     fun moveToNotes(view: View) {
-        val intent = Intent(this, NoteList::class.java)
+        val intent = Intent(this, NoteList::class.java).apply {
+            putExtra("BOT_NAV_BAR", false)
+        }
         startActivity(intent)
     }
 
@@ -120,7 +99,7 @@ class MainActivity : AppCompatActivity() {
                             if((view.parent as ViewGroup).findViewById<CheckBox>(R.id.loggedCheck).isChecked){
                                 sharedPreferences = getSharedPreferences(getString(R.string.preferenceFile), Context.MODE_PRIVATE)
                                     with (sharedPreferences.edit()) {
-                                        putString(getString(R.string.passwordP), password)
+                                        putBoolean("autoLogin", true)
                                         commit()
                                     }
                             }

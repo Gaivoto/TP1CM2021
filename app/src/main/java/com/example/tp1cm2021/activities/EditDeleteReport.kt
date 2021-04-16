@@ -31,7 +31,6 @@ class EditDeleteReport : AppCompatActivity(), DeleteNoteFragment.NoteDeleteDialo
         val descriptionView = findViewById<TextView>(R.id.reportDetailsDescription)
         val typeView = findViewById<TextView>(R.id.reportDetailsType)
         val dateView = findViewById<TextView>(R.id.reportDetailsDate)
-        val userView = findViewById<TextView>(R.id.reportDetailsUser)
         val imageView = findViewById<ImageView>(R.id.reportDetailsImage)
 
         //get the title from the marker and set the title view text to it
@@ -69,8 +68,6 @@ class EditDeleteReport : AppCompatActivity(), DeleteNoteFragment.NoteDeleteDialo
         } else {
             dateView.text = getString(R.string.lastModified) + " " + lastModified
         }
-
-        userView.text = getString(R.string.createdBy) + " " + username
 
         //request to load the image using the library Picasso
         Picasso.get()
