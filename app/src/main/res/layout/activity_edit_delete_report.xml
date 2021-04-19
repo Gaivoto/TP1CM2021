@@ -59,9 +59,9 @@
 
     <ImageView
         android:id="@+id/reportDetailsImage"
-        android:layout_width="340dp"
-        android:layout_height="268dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="345dp"
+        android:layout_height="238dp"
+        android:layout_marginBottom="55dp"
         app:layout_constraintBottom_toTopOf="@+id/reportDetailsCloseBtn"
         app:layout_constraintStart_toStartOf="@+id/reportDetailsTitle"
         tools:srcCompat="@tools:sample/avatars" />
@@ -160,4 +160,68 @@
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/clearImgText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="clearImg"
+        android:text="@string/clearImage"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/restoreImgText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reportDetailsImage" />
+
+    <TextView
+        android:id="@+id/restoreImgText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="restoreImg"
+        android:text="@string/restoreImage"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/clearImgText"
+        app:layout_constraintTop_toBottomOf="@+id/reportDetailsImage" />
+
+    <ImageView
+        android:id="@+id/imageHolder"
+        android:layout_width="340dp"
+        android:layout_height="237dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/reportDetailsTitle"
+        app:layout_constraintTop_toTopOf="@+id/reportDetailsImage"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/updateUploadGallery"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginBottom="85dp"
+        android:onClick="uploadFromGallery"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/reportDetailsCloseBtn"
+        app:layout_constraintEnd_toStartOf="@+id/updateTakePhoto"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/upload_gallery" />
+
+    <ImageView
+        android:id="@+id/updateTakePhoto"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:onClick="takePhoto"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/updateUploadGallery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/updateUploadGallery"
+        app:srcCompat="@drawable/take_photo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

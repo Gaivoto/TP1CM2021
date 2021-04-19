@@ -72,4 +72,5 @@
     <string name="createdBy2">Created by:</string>
     <string name="you">You</string>
     <string name="another">Another</string>
+    <string name="restoreImage">Restore image</string>
 </resources>

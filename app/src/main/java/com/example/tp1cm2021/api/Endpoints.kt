@@ -40,10 +40,14 @@ interface Endpoints {
     ): Call<ReportNonSelectOutput>
 
     //update report endpoint
-    @PUT("api/reports/{id}")
+    @Multipart
+    @POST("api/reports/{id}")
     fun updateReport(
         @Path("id") id: Int,
-        @Body putBody: PutBody
+        @Part("title") title: RequestBody,
+        @Part("description") description: RequestBody,
+        @Part("username") username: RequestBody,
+        @Part image: MultipartBody.Part
     ): Call<ReportNonSelectOutput>
 
     //delete report endpoint
